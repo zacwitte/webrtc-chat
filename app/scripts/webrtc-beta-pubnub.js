@@ -265,7 +265,6 @@
       ON_NEW_CONNECTION.push(callback);
     };
 
-
     // PUBNUB.createP2PConnection
     // Signals and creates a P2P connection between two users.
     API['createP2PConnection'] = function (uuid, offer, callback) {
@@ -313,20 +312,10 @@
         };
         pc.ondatachannel = onDataChannelCreated;
 
-        var iceCandidateBuffer = [];
-        function flushIceCandidateBuffer() {
-          candidate = iceCandidateBuffer.shift();
-          if (candidate) {
-            console.log("Flushing buffer", iceCandidateBuffer);
-            signalingChannel.send({ "candidate": candidate });
-          }
-        }
-        var iceCandidateBufferInterval = setInterval(flushIceCandidateBuffer, 500);
-
         pc.onicecandidate = function (event) {
           // TODO: Figure out why we get a null candidate
           if (event.candidate != null) {
-            iceCandidateBuffer.push(event.candidate);
+            signalingChannel.send({ "candidate": event.candidate });
           }
         };
 
