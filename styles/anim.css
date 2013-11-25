@@ -1,0 +1,49 @@
+@-webkit-keyframes page-fade-out {
+  /* line 3, ../../app/styles/anim.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 4, ../../app/styles/anim.scss */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes page-fade-out {
+  /* line 7, ../../app/styles/anim.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 8, ../../app/styles/anim.scss */
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes page-fade-in {
+  /* line 13, ../../app/styles/anim.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 14, ../../app/styles/anim.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-fade-in {
+  /* line 17, ../../app/styles/anim.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 18, ../../app/styles/anim.scss */
+  100% {
+    opacity: 1;
+  }
+}
